@@ -30,11 +30,11 @@ class ClassUtil
 	{
 		var actualClass : Class<Dynamic> = null;
 		
-		if ( Std.is( classOrClassName, Class ) )
+		if ( Std.isOfType( classOrClassName, Class ) )
 		{
 			actualClass = cast( classOrClassName, Class<Dynamic> );
 		}
-		else if ( Std.is( classOrClassName, String ) )
+		else if ( Std.isOfType( classOrClassName, String ) )
 		{
 			try
 			{
@@ -52,7 +52,7 @@ class ClassUtil
 		}
 		
 		var classInstance = Type.createEmptyInstance( actualClass );
-		return Std.is( classInstance, superClass );
+		return Std.isOfType( classInstance, superClass );
 	}
 	
 	static public function getStaticVariableReference( qualifiedClassName : String ) : Dynamic
